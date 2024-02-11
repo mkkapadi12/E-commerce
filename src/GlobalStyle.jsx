@@ -49,7 +49,7 @@ h4 {
 
 h1 {
   color: ${({ theme }) => theme.colors.heading};
-  font-size: 6rem;
+  font-size: 4.5rem;
   font-weight: 900;
 }
 
@@ -141,7 +141,7 @@ input, textarea{
     color: ${({ theme }) => theme.colors.black};
     padding: 1.6rem 2.4rem;
     border: 1px solid ${({ theme }) => theme.colors.border};
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
 }
     input[type="submit"]{
@@ -152,7 +152,7 @@ input, textarea{
     padding: 1.4rem 2.2rem;
     border-style: solid;
     border-width: .1rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 1.8rem;
     cursor: pointer;
     }
