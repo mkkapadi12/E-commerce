@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from "react";
-import Footer from "../components/Footer";
 
 const Contact = () => {
   const Wrapper = styled.section`
@@ -84,7 +83,6 @@ const Contact = () => {
           </div>
         </div>
       </Wrapper>
-      <Footer />
     </>
   );
 };

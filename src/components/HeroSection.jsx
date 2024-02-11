@@ -89,6 +89,7 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    padding: 5rem 0 8rem 0;
     .grid {
       gap: 10rem;
     }

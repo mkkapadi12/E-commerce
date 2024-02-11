@@ -10,6 +10,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import { BrowserRouter as Main, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const App = () => {
   const theme = {
@@ -55,6 +56,7 @@ const App = () => {
             <Route exact path="/cart" element={<Cart />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
+          <Footer />
         </Main>
       </ThemeProvider>
     </>

@@ -12,24 +12,18 @@ export const GlobalStyle = createGlobalStyle`
 
 html {
   font-size: 62.5%;
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
   /* 1rem = 10px */
   overflow-x: hidden;
 }
 
-body {
-  overflow-x: hidden;
-   scrollbar-color: rgb(98 84 243);
-    scrollbar-width: thin;
-}
-
 body::-webkit-scrollbar {
-  width: 1.5rem;
+  display: none;
 }
 
-body::-webkit-scrollbar-track {
+/* body::-webkit-scrollbar-track {
    background-color: rgb(24 24 29);
-}
+} */
 
 body::-webkit-scrollbar-thumb {
  
