@@ -169,6 +169,10 @@ input, textarea{
       .grid-two-column , .grid-three-column, .grid-four-column{
           grid-template-columns: 1fr;
         }
+
+        .common-heading{
+          font-size: 2.8rem;
+        }
     }
 
 `;
