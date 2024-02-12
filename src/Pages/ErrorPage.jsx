@@ -16,9 +16,9 @@ const ErrorPage = () => {
               Mystery. You can click the button below to go back to the
               homepage.
             </p>
-            <Button>
-              <NavLink to="/">Home</NavLink>
-            </Button>
+            <NavLink to="/">
+              <Button>Home</Button>
+            </NavLink>
           </div>
         </div>
       </Wrapper>
