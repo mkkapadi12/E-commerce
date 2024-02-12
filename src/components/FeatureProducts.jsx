@@ -34,10 +34,13 @@ const FeatureProducts = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 9rem 0;
-  background-color: ${({ theme }) => theme.colors.bg};
+  padding: 2rem 0;
+  margin: 3rem auto;
 
   .container {
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: ${({ theme }) => theme.colors.bg};
     max-width: 120rem;
   }
 
