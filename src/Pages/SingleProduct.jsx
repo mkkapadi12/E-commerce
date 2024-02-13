@@ -9,6 +9,7 @@ import CurrencyFormate from "../Helper/CurrencyFormate";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import { MdSecurity } from "react-icons/md";
 import Rating from "../components/Rating";
+import AddToCart from "../components/AddToCart";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -36,7 +37,7 @@ const SingleProduct = () => {
     stars,
     stock,
   } = singleProduct;
-  // console.log(image);
+  // console.log(colors);
 
   if (isSingleLoading) {
     return (
@@ -99,6 +100,8 @@ const SingleProduct = () => {
                   Brand :<span>{company}</span>
                 </p>
               </div>
+              <hr />
+              {stock > 0 && <AddToCart product={singleProduct} />}
             </div>
           </div>
         </Container>
