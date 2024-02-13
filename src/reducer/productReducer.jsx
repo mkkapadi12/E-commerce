@@ -10,7 +10,7 @@ const ProductReducer = (state, action) => {
       const featureData = action.payload.filter((curElem) => {
         return curElem.featured === true;
       });
-    //   console.log(featureData);
+      //   console.log(featureData);
 
       return {
         ...state,
@@ -22,6 +22,26 @@ const ProductReducer = (state, action) => {
     case "API_ERROR":
       return {
         ...state,
+        isError: true,
+      };
+
+    case "SET_SINGLE_LOADING":
+      return {
+        ...state,
+        isSingleLoading: true,
+      };
+
+    case "SET_SINGLE_API_DATA":
+      return {
+        ...state,
+        isSingleLoading: false,
+        singleProduct: action.payload,
+      };
+
+    case "SET_SINGLE_ERROR":
+      return {
+        ...state,
+        isSingleLoading: false,
         isError: true,
       };
 

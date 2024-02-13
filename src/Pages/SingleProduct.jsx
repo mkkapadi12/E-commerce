@@ -1,10 +1,108 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useProductContext } from "../Context/ProductContext";
+import PageNavigation from "../components/PageNavigation";
+import MyImage from "../components/MyImage";
+import { Container } from "../styles/Container";
+import CurrencyFormate from "../Helper/CurrencyFormate";
+import { TbTruckDelivery, TbReplace } from "react-icons/tb";
+import { MdSecurity } from "react-icons/md";
+import Rating from "../components/Rating";
+
+const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
+  const { getSingleProduct, singleProduct, isSingleLoading } =
+    useProductContext();
+  // console.log(singleProduct);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    getSingleProduct(`${API}?id=${id}`);
+  }, []);
+
+  const {
+    id: alis,
+    name,
+    company,
+    price,
+    colors,
+    description,
+    category,
+    image,
+    reviews,
+    stars,
+    stock,
+  } = singleProduct;
+  // console.log(image);
+
+  if (isSingleLoading) {
+    return (
+      <>
+        <div className="common-heading">Loading...</div>
+      </>
+    );
+  }
+
   return (
     <>
-      <Wrapper></Wrapper>;
+      <Wrapper>
+        <PageNavigation title={name} />
+        <Container className="container">
+          <div className="grid grid-two-column">
+            <div className="product-images">
+              <MyImage imgs={image} />
+            </div>
+            <div className="product-data">
+              <h2 style={{ textTransform: "capitalize" }}>{name}</h2>
+
+              <Rating stars={stars} reviews={reviews} />
+              <p className="product-data-price">
+                MRP:
+                <del>
+                  <CurrencyFormate price={price + 250000} />
+                </del>
+              </p>
+              <p className="product-data-price product-data-real-price">
+                Deal of The Day : <CurrencyFormate price={price} />
+              </p>
+              <p>{description}</p>
+              <div className="product-data-warranty">
+                <div className="product-warranty-data">
+                  <TbTruckDelivery className="warranty-icon" />
+                  <p>Free Delivery</p>
+                </div>
+                <div className="product-warranty-data">
+                  <TbReplace className="warranty-icon" />
+                  <p>30 Days Replacement</p>
+                </div>
+                <div className="product-warranty-data">
+                  <TbTruckDelivery className="warranty-icon" />
+                  <p>Mayur Delivery</p>
+                </div>
+                <div className="product-warranty-data">
+                  <MdSecurity className="warranty-icon" />
+                  <p>2 years warranty</p>
+                </div>
+              </div>
+              <div className="product-data-info">
+                <p>
+                  Available :
+                  <span>{stock > 0 ? "In Stock" : "Not Available"} </span>
+                </p>
+                <p>
+                  ID :<span>{alis}</span>
+                </p>
+                <p>
+                  Brand :<span>{company}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Wrapper>
     </>
   );
 };
@@ -13,6 +111,7 @@ const Wrapper = styled.section`
   .container {
     padding: 9rem 0;
   }
+
   .product-data {
     display: flex;
     flex-direction: column;
