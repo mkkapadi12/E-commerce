@@ -30,12 +30,13 @@ const FilterContextProvider = ({ children }) => {
 
   //Sorting function
 
-  const sorting = () => {
-    dispatch({ type: "SET_SORT_VALUE" });
+  const sorting = (event) => {
+    var userValue = event.target.value;
+    dispatch({ type: "SET_SORT_VALUE", payload: userValue });
   };
 
   useEffect(() => {
-    dispatch({ type: "SORTING_DATA", payload: products });
+    dispatch({ type: "SORTING_DATA" });
     // console.log("Sorting");
   }, [state.sortValue]);
 
