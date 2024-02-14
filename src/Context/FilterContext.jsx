@@ -7,7 +7,9 @@ const FilterContext = createContext();
 const initialState = {
   filter_product: [],
   all_product: [],
-  setGridView: true,
+  Grid_View: true,
+  List_View: true,
+  sortValue: "a-z",
 };
 
 const FilterContextProvider = ({ children }) => {
@@ -16,16 +18,35 @@ const FilterContextProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  //to set Grid View
   const setGridView = () => {
     return dispatch({ type: "GRID_VIEW" });
   };
+
+  //to set Grid View
+  const setListView = () => {
+    return dispatch({ type: "LIST_VIEW" });
+  };
+
+  //Sorting function
+
+  const sorting = () => {
+    dispatch({ type: "SET_SORT_VALUE" });
+  };
+
+  useEffect(() => {
+    dispatch({ type: "SORTING_DATA", payload: products });
+    // console.log("Sorting");
+  }, [state.sortValue]);
 
   useEffect(() => {
     dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
   }, [products]);
 
   return (
-    <FilterContext.Provider value={{ ...state, setGridView }}>
+    <FilterContext.Provider
+      value={{ ...state, setGridView, setListView, sorting }}
+    >
       {children}
     </FilterContext.Provider>
   );

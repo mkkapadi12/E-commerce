@@ -1,8 +1,36 @@
 import React from "react";
 import styled from "styled-components";
+import CurrencyFormate from "../Helper/CurrencyFormate";
+import { NavLink } from "react-router-dom";
+import { Button } from "../styles/Button";
 
 const ListView = ({ products }) => {
-  return <Wrapper></Wrapper>;
+  return (
+    <Wrapper className="section">
+      <div className="container grid">
+        {products.map((curElem) => {
+          const { id, name, image, price, description } = curElem;
+          return (
+            <div className="card grid grid-two-column" key={id}>
+              <figure>
+                <img src={image} alt={name} />
+              </figure>
+              <div className="card-data">
+                <h3>{name}</h3>
+                <p>
+                  <CurrencyFormate price={price} />
+                </p>
+                <p>{description.slice(0, 98)}...</p>
+                <NavLink to={`/singleproduct/${id}`}>
+                  <Button className="btn">Read More</Button>
+                </NavLink>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`
@@ -74,19 +102,13 @@ const Wrapper = styled.section`
 
       &:hover {
         background-color: rgb(98 84 243);
-      }
-
-      &:hover a {
         color: #fff;
       }
+
       a {
         color: rgb(98 84 243);
         font-size: 1.4rem;
       }
-    }
-
-    .btn-main .btn:hover {
-      color: #fff;
     }
   }
 `;
