@@ -56,10 +56,49 @@ const FilterRedducer = (state, action) => {
       };
 
       newSortData = tempSortProduct.sort(sortingProducts);
-      
+
       return {
         ...state,
         filter_product: newSortData,
+      };
+
+    //set filter value
+
+    case "UPDATE_FILTER_VALUE":
+      const { name, value } = action.payload;
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          [name]: value,
+        },
+      };
+
+    //set filter Product
+
+    case "FILTER_PRODUCTS":
+      let { all_product } = state;
+      let tempFilterProduct = [...all_product];
+
+      const { text, category } = state.filters;
+      // console.log(text);
+
+      if (text) {
+        tempFilterProduct = tempFilterProduct.filter((curElem) => {
+          return curElem.name.toLowerCase().includes(text);
+          // return curElem.name.toLowerCase().startsWith(text);
+        });
+      }
+
+      if (category) {
+        tempFilterProduct = tempFilterProduct.filter((curElem) => {
+          return curElem.category === category;
+        });
+      }
+
+      return {
+        ...state,
+        filter_product: tempFilterProduct,
       };
 
     default:
