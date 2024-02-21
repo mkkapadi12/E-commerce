@@ -23,7 +23,7 @@ const FilterRedducer = (state, action) => {
       // const userSortValue = document.getElementById("sort");
       // const SortValue =
       //   userSortValue.options[userSortValue.selectedIndex].value;
-      //   console.log("SortValue :", SortValue);
+      // console.log("SortValue   :", SortValue);
 
       return {
         ...state,
@@ -34,21 +34,25 @@ const FilterRedducer = (state, action) => {
       let newSortData;
       const { filter_product, sortValue } = state;
       let tempSortProduct = filter_product;
-      //   console.log('tempSortProduct :', tempSortProduct);
+      // console.log("filter_product :", filter_product);
+      // console.log("tempSortProduct :", tempSortProduct);
 
       const sortingProducts = (a, b) => {
         //sorting by lowest price
         if (sortValue === "lowest") {
           return a.price - b.price;
         }
+
         //sorting by highest price
         if (sortValue === "highest") {
           return b.price - a.price;
         }
+
         //Sorting a-z :
         if (sortValue === "a-z") {
           return a.name.localeCompare(b.name);
         }
+
         //Sorting z-a :
         if (sortValue === "z-a") {
           return b.name.localeCompare(a.name);
@@ -56,6 +60,7 @@ const FilterRedducer = (state, action) => {
       };
 
       newSortData = tempSortProduct.sort(sortingProducts);
+      // console.log("newSortData :", newSortData);
 
       return {
         ...state,

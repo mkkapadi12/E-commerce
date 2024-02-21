@@ -5,7 +5,6 @@ import Sort from "../components/Sort";
 import ProductList from "../components/ProductList";
 
 const Products = () => {
-
   return (
     <Wrapper>
       <div className="container grid grid-filter-column">

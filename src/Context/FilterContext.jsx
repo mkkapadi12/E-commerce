@@ -9,7 +9,7 @@ const initialState = {
   all_product: [],
   Grid_View: true,
   List_View: true,
-  sortValue: "a-z",
+  sortValue: "lowest",
   filters: {
     text: "",
     category: "all",
@@ -19,7 +19,7 @@ const initialState = {
 
 const FilterContextProvider = ({ children }) => {
   const { products } = useProductContext();
-  //   console.log("products :", products);
+  // console.log("products :", products);
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -37,6 +37,7 @@ const FilterContextProvider = ({ children }) => {
 
   const sorting = (event) => {
     var userValue = event.target.value;
+    // console.log(userValue);
     dispatch({ type: "SET_SORT_VALUE", payload: userValue });
   };
 
@@ -45,15 +46,18 @@ const FilterContextProvider = ({ children }) => {
   const updateFilterValue = (event) => {
     let name = event.target.name;
     let value = event.target.value;
-
+    // console.log(value);
     return dispatch({ type: "UPDATE_FILTER_VALUE", payload: { name, value } });
   };
 
   useEffect(() => {
-    dispatch({ type: "FILTER_PRODUCTS" });
     dispatch({ type: "SORTING_DATA" });
     // console.log("Sorting");
-  }, [products, state.sortValue, state.filters]);
+  }, [products, state.sortValue]);
+
+  useEffect(() => {
+    dispatch({ type: "FILTER_PRODUCTS" });
+  }, [products, state.filters]);
 
   useEffect(() => {
     dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });

@@ -4,7 +4,7 @@ import { useFilterContext } from "../Context/FilterContext";
 
 const FilterSection = () => {
   const {
-    filters: { text, category, company },
+    filters: { text, category },
     updateFilterValue,
     all_product,
   } = useFilterContext();
