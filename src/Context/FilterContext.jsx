@@ -13,7 +13,11 @@ const initialState = {
   filters: {
     text: "",
     category: "all",
-    company: "dell",
+    company: "all",
+    color: "all",
+    maxPrice: 0,
+    Price: 0,
+    minPrice: 0,
   },
 };
 
@@ -50,6 +54,11 @@ const FilterContextProvider = ({ children }) => {
     return dispatch({ type: "UPDATE_FILTER_VALUE", payload: { name, value } });
   };
 
+  //to clear Filter
+  const clearFilter = () => {
+    dispatch({ type: "CLEAR_FILTERS" });
+  };
+
   useEffect(() => {
     dispatch({ type: "SORTING_DATA" });
     // console.log("Sorting");
@@ -65,7 +74,14 @@ const FilterContextProvider = ({ children }) => {
 
   return (
     <FilterContext.Provider
-      value={{ ...state, setGridView, setListView, sorting, updateFilterValue }}
+      value={{
+        ...state,
+        setGridView,
+        setListView,
+        sorting,
+        updateFilterValue,
+        clearFilter,
+      }}
     >
       {children}
     </FilterContext.Provider>

@@ -1,10 +1,20 @@
 const FilterRedducer = (state, action) => {
   switch (action.type) {
     case "LOAD_FILTER_PRODUCTS":
+      let priceArr = action.payload.map((curElem) => curElem.price);
+      // console.log("priceArr :", priceArr);
+
+      let maxPrice = Math.max(...priceArr);
+      // console.log("maxPrice :", maxPrice);
       return {
         ...state,
         filter_product: [...action.payload],
         all_product: [...action.payload],
+        filters: {
+          ...state.filters,
+          maxPrice,
+          Price: maxPrice,
+        },
       };
 
     case "GRID_VIEW":
@@ -71,6 +81,7 @@ const FilterRedducer = (state, action) => {
 
     case "UPDATE_FILTER_VALUE":
       const { name, value } = action.payload;
+      // console.log(value);
       return {
         ...state,
         filters: {
@@ -85,9 +96,8 @@ const FilterRedducer = (state, action) => {
       let { all_product } = state;
       let tempFilterProduct = [...all_product];
 
-      const { text, category } = state.filters;
-      // console.log(text);
-
+      const { text, category, company, color, Price } = state.filters;
+      // console.log(company);
       if (text) {
         tempFilterProduct = tempFilterProduct.filter((curElem) => {
           return curElem.name.toLowerCase().includes(text);
@@ -95,15 +105,48 @@ const FilterRedducer = (state, action) => {
         });
       }
 
-      if (category) {
+      if (category !== "all") {
         tempFilterProduct = tempFilterProduct.filter((curElem) => {
           return curElem.category === category;
+        });
+      }
+
+      if (company !== "all") {
+        tempFilterProduct = tempFilterProduct.filter((curElem) => {
+          return curElem.company.toLowerCase() === company.toLowerCase();
+        });
+      }
+
+      if (color !== "all") {
+        tempFilterProduct = tempFilterProduct.filter((curElem) => {
+          return curElem.colors.includes(color);
+        });
+      }
+
+      if (Price) {
+        tempFilterProduct = tempFilterProduct.filter((curElem) => {
+          return curElem.price <= Price;
         });
       }
 
       return {
         ...state,
         filter_product: tempFilterProduct,
+      };
+
+    case "CLEAR_FILTERS":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          text: "",
+          category: "all",
+          company: "all",
+          color: "all",
+          maxPrice: state.filters.maxPrice,
+          Price: state.filters.maxPrice,
+          minPrice: state.filters.minPrice,
+        },
       };
 
     default:
