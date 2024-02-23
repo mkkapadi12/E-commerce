@@ -10,6 +10,7 @@ import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import { MdSecurity } from "react-icons/md";
 import Rating from "../components/Rating";
 import AddToCart from "../components/AddToCart";
+import Progress from "../Helper/Progress";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -29,9 +30,7 @@ const SingleProduct = () => {
     name,
     company,
     price,
-    colors,
     description,
-    category,
     image,
     reviews,
     stars,
@@ -42,7 +41,7 @@ const SingleProduct = () => {
   if (isSingleLoading) {
     return (
       <>
-        <div className="common-heading">Loading...</div>
+        <Progress />
       </>
     );
   }

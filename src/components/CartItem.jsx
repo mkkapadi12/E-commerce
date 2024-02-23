@@ -4,16 +4,8 @@ import AmoutCartToggle from "./AmoutCartToggle";
 import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../Context/CartContext";
 
-const CartItem = ({ id, color, price, amount, image, name }) => {
-  const { removeItem } = useCartContext();
-
-  const setDecrese = () => {
-    //   amount > 1 ? setAmount(amount - 1) : setAmount(1);
-  };
-
-  const setIncrese = () => {
-    //   amount < stock ? setAmount(amount + 1) : setAmount(stock);
-  };
+const CartItem = ({ id, color, price, amount, image, name, max }) => {
+  const { removeItem, setDecrement, setIncrement } = useCartContext();
 
   return (
     <>
@@ -45,8 +37,8 @@ const CartItem = ({ id, color, price, amount, image, name }) => {
         <div>
           <AmoutCartToggle
             amount={amount}
-            setDecrese={setDecrese}
-            setIncrese={setIncrese}
+            setDecrese={() => setDecrement(id)}
+            setIncrese={() => setIncrement(id)}
           />
         </div>
         {/* SubTotal */}

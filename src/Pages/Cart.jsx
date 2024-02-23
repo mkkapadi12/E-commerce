@@ -2,10 +2,13 @@ import styled from "styled-components";
 import React from "react";
 import { useCartContext } from "../Context/CartContext";
 import CartItem from "../components/CartItem";
+import { NavLink } from "react-router-dom";
+import { Button } from "../styles/Button";
+import CurrencyFormate from "../Helper/CurrencyFormate";
 
 const Cart = () => {
-  const { cart } = useCartContext();
-  console.log("cart :", cart);
+  const { cart, clearCart, shipping_fee, total_price } = useCartContext();
+  // console.log("cart :", cart);
 
   return (
     <Wrapper>
@@ -24,6 +27,38 @@ const Cart = () => {
           })}
         </div>
         <hr />
+        <div className="cart-two-button">
+          <NavLink to="/products">
+            <Button>continue shopping</Button>
+          </NavLink>
+          <Button className="btn-clear" onClick={clearCart}>
+            clear cart
+          </Button>
+        </div>
+        {/* order total_amount */}
+        <div className="order-total--amount">
+          <div className="order-total--subdata">
+            <div>
+              <p>subtotal:</p>
+              <p>
+                <CurrencyFormate price={total_price} />
+              </p>
+            </div>
+            <div>
+              <p>shipping fee:</p>
+              <p>
+                <CurrencyFormate price={shipping_fee} />
+              </p>
+            </div>
+            <hr />
+            <div>
+              <p>order total:</p>
+              <p>
+                <CurrencyFormate price={shipping_fee + total_price} />
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </Wrapper>
   );

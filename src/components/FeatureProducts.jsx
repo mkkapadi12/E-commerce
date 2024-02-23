@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useProductContext } from "../Context/ProductContext";
 import Product from "./Product";
+import Progress from "../Helper/Progress";
 
 const FeatureProducts = () => {
   const { featureProducts, isLoading } = useProductContext();
@@ -11,7 +12,8 @@ const FeatureProducts = () => {
     return (
       <>
         <div className="container">
-          <div className="common-heading">.....Loading</div>
+          <Progress />
+          {/* <div className="common-heading">.....Loading</div> */}
         </div>
       </>
     );
