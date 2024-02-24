@@ -1,6 +1,6 @@
 # Mayur E-commerce
 
-![E-commerce](E-commerce.png)
+![E-commerce](./public/images/E-commerce.png)
 
 My E-commerce website is a responsive and dynamic platform designed to make online shopping easy and enjoyable. It fetches product information from APIs, ensuring that the inventory is up-to-date and reflective of the latest offerings.
 
@@ -57,7 +57,7 @@ Make sure you have the following software and accounts set up:
    npm start
    ```
 
-2. Open your web browser and navigate to [http://localhost:3000](http://localhost:3000) to access the News App.
+2. Open your web browser and navigate to [http://localhost:3000](http://localhost:3000) to access the E-commerce Website.
 
 ## Usage
 
