@@ -1,6 +1,7 @@
 # Mayur E-commerce
 
 ![E-commerce](./public/images/E-commerce.png)
+![E-commerce](./public/images/Product.png)
 
 My E-commerce website is a responsive and dynamic platform designed to make online shopping easy and enjoyable. It fetches product information from APIs, ensuring that the inventory is up-to-date and reflective of the latest offerings.
 
