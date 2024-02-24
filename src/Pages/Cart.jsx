@@ -65,7 +65,7 @@ const Cart = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 9rem 0;
+  padding: 9rem 0 2rem;
 
   .grid-four-column {
     grid-template-columns: repeat(4, 1fr);
@@ -176,7 +176,7 @@ const Wrapper = styled.section`
 
   .order-total--amount {
     width: 100%;
-    margin: 4.8rem 0;
+    margin: 4.8rem 0 1.5rem;
     text-transform: capitalize;
     display: flex;
     flex-direction: column;
