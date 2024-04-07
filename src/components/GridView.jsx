@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import Product from "./Product";
+import React from 'react';
+import styled from 'styled-components';
+import Product from './Product';
 
 const GridView = ({ products }) => {
-//   console.log("products :", products);
+  //   console.log("products :", products);
   return (
     <Wrapper className="section">
       <div className="container grid grid-three-column">
@@ -35,7 +35,7 @@ const Wrapper = styled.section`
     overflow: hidden;
     transition: all 0.5s linear;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;

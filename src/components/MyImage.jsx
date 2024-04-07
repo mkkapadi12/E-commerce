@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const MyImage = ({ imgs = [{ url: "" }] }) => {
+const MyImage = ({ imgs = [{ url: '' }] }) => {
   //   console.log(imgs);
   const [mainImg, setMainImg] = useState(imgs[0]);
   return (

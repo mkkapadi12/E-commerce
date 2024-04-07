@@ -1,11 +1,11 @@
-import React from "react";
-import HeroSection from "../components/HeroSection";
+import React from 'react';
+import HeroSection from '../components/HeroSection';
 // import { useProductContext } from "../Context/ProductContext";
 
 const About = () => {
   // const Bro = useProductContext();
   const data = {
-    name: "Mayur E-commerce",
+    name: 'Mayur E-commerce',
   };
   return (
     <>

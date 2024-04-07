@@ -1,7 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import { Button } from "../styles/Button";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { Button } from '../styles/Button';
 
 const HeroSection = ({ myData }) => {
   const { name } = myData;
@@ -73,7 +73,7 @@ const Wrapper = styled.section`
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       width: 60%;
       height: 80%;
       background-color: rgba(81, 56, 238, 0.4);
@@ -95,7 +95,7 @@ const Wrapper = styled.section`
     }
 
     figure::after {
-      content: "";
+      content: '';
       width: 50%;
       height: 100%;
       left: 0;

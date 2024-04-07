@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useEffect, useReducer } from "react";
-import { useProductContext } from "./ProductContext";
-import reducer from "../reducer/FilterReducer";
+import React, { createContext, useContext, useEffect, useReducer } from 'react';
+import { useProductContext } from './ProductContext';
+import reducer from '../reducer/FilterReducer';
 
 const FilterContext = createContext();
 
@@ -9,12 +9,12 @@ const initialState = {
   all_product: [],
   Grid_View: true,
   List_View: true,
-  sortValue: "lowest",
+  sortValue: 'lowest',
   filters: {
-    text: "",
-    category: "all",
-    company: "all",
-    color: "all",
+    text: '',
+    category: 'all',
+    company: 'all',
+    color: 'all',
     maxPrice: 0,
     Price: 0,
     minPrice: 0,
@@ -29,12 +29,12 @@ const FilterContextProvider = ({ children }) => {
 
   //to set Grid View
   const setGridView = () => {
-    return dispatch({ type: "GRID_VIEW" });
+    return dispatch({ type: 'GRID_VIEW' });
   };
 
   //to set Grid View
   const setListView = () => {
-    return dispatch({ type: "LIST_VIEW" });
+    return dispatch({ type: 'LIST_VIEW' });
   };
 
   //Sorting function
@@ -42,7 +42,7 @@ const FilterContextProvider = ({ children }) => {
   const sorting = (event) => {
     var userValue = event.target.value;
     // console.log(userValue);
-    dispatch({ type: "SET_SORT_VALUE", payload: userValue });
+    dispatch({ type: 'SET_SORT_VALUE', payload: userValue });
   };
 
   //set filter Value
@@ -51,25 +51,25 @@ const FilterContextProvider = ({ children }) => {
     let name = event.target.name;
     let value = event.target.value;
     // console.log(value);
-    return dispatch({ type: "UPDATE_FILTER_VALUE", payload: { name, value } });
+    return dispatch({ type: 'UPDATE_FILTER_VALUE', payload: { name, value } });
   };
 
   //to clear Filter
   const clearFilter = () => {
-    dispatch({ type: "CLEAR_FILTERS" });
+    dispatch({ type: 'CLEAR_FILTERS' });
   };
 
   useEffect(() => {
-    dispatch({ type: "SORTING_DATA" });
+    dispatch({ type: 'SORTING_DATA' });
     // console.log("Sorting");
   }, [products, state.sortValue]);
 
   useEffect(() => {
-    dispatch({ type: "FILTER_PRODUCTS" });
+    dispatch({ type: 'FILTER_PRODUCTS' });
   }, [products, state.filters]);
 
   useEffect(() => {
-    dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
+    dispatch({ type: 'LOAD_FILTER_PRODUCTS', payload: products });
   }, [products]);
 
   return (

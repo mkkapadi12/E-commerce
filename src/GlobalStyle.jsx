@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -76,7 +76,7 @@ li {
 }
 
 
-${"" /* resuable code section  */}
+${'' /* resuable code section  */}
 
 .container {
   max-width: 120rem;

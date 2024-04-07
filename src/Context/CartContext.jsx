@@ -1,10 +1,10 @@
-import React, { createContext, useContext, useEffect, useReducer } from "react";
-import reducer from "../reducer/Cart_Reducer";
+import React, { createContext, useContext, useEffect, useReducer } from 'react';
+import reducer from '../reducer/Cart_Reducer';
 
 const cartContext = createContext();
 
 const getlocalData = () => {
-  let localCartData = localStorage.getItem("mayurCart");
+  let localCartData = localStorage.getItem('mayurCart');
   // if (localCartData === "") {
   //   return [];
   // } else {
@@ -27,19 +27,19 @@ const CartContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const addToCart = (id, color, amount, product) => {
-    dispatch({ type: "ADD_TO_CART", payload: { id, color, amount, product } });
+    dispatch({ type: 'ADD_TO_CART', payload: { id, color, amount, product } });
   };
 
   const setIncrement = (id) => {
-    dispatch({ type: "SET_INCREMENT", payload: id });
+    dispatch({ type: 'SET_INCREMENT', payload: id });
   };
 
   const setDecrement = (id) => {
-    dispatch({ type: "SET_DECREMENT", payload: id });
+    dispatch({ type: 'SET_DECREMENT', payload: id });
   };
 
   const removeItem = (id) => {
-    dispatch({ type: "REMOVE_ITEM", payload: id });
+    dispatch({ type: 'REMOVE_ITEM', payload: id });
   };
 
   //set localStorage data
@@ -47,12 +47,12 @@ const CartContextProvider = ({ children }) => {
   useEffect(() => {
     // dispatch({ type: "CART_TOTAL_ITEM" });
     // dispatch({ type: "CART_TOTAL_PRICE" });
-    dispatch({ type: "CART_TOAL_PRICE_ITEM" });
-    localStorage.setItem("mayurCart", JSON.stringify(state.cart));
+    dispatch({ type: 'CART_TOAL_PRICE_ITEM' });
+    localStorage.setItem('mayurCart', JSON.stringify(state.cart));
   }, [state.cart]);
 
   const clearCart = () => {
-    dispatch({ type: "CLEAR_CART" });
+    dispatch({ type: 'CLEAR_CART' });
   };
 
   return (

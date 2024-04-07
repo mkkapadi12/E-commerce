@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { useFilterContext } from "../Context/FilterContext";
-import { FaCheck } from "react-icons/fa";
-import CurrencyFormate from "../Helper/CurrencyFormate";
-import { Button } from "../styles/Button";
+import React from 'react';
+import styled from 'styled-components';
+import { useFilterContext } from '../Context/FilterContext';
+import { FaCheck } from 'react-icons/fa';
+import CurrencyFormate from '../Helper/CurrencyFormate';
+import { Button } from '../styles/Button';
 
 const FilterSection = () => {
   const {
@@ -21,20 +21,20 @@ const FilterSection = () => {
       return curElem[property];
     });
 
-    if (property === "colors") {
+    if (property === 'colors') {
       // return (newVal = ["all", ...new Set([].concat(...newVal))]);
       newVal = newVal.flat();
     }
     // else {
-    return (newVal = ["all", ...new Set(newVal)]);
+    return (newVal = ['all', ...new Set(newVal)]);
     // }
     // console.log(newVal);
   };
 
   //we need unique data
-  const categoryOnlyData = getUniqueData(all_product, "category");
-  const companyOnlyData = getUniqueData(all_product, "company");
-  const colorData = getUniqueData(all_product, "colors");
+  const categoryOnlyData = getUniqueData(all_product, 'category');
+  const companyOnlyData = getUniqueData(all_product, 'company');
+  const colorData = getUniqueData(all_product, 'colors');
   // console.log("colorData :", colorData);
   // console.log("companyOnlyData :", companyOnlyData);
 
@@ -66,7 +66,7 @@ const FilterSection = () => {
                     name="category"
                     value={curElem}
                     onClick={updateFilterValue}
-                    className={curElem === category ? "active" : "null"}
+                    className={curElem === category ? 'active' : 'null'}
                   >
                     {curElem}
                   </button>
@@ -100,7 +100,7 @@ const FilterSection = () => {
           <h3>Colors</h3>
           <div className="filter-color-style">
             {colorData.map((curColor, index) => {
-              if (curColor === "all") {
+              if (curColor === 'all') {
                 return (
                   <button
                     type="button"
@@ -121,7 +121,7 @@ const FilterSection = () => {
                   style={{ backgroundColor: curColor }}
                   key={index}
                   className={
-                    curColor === color ? "btnStyle active" : "btnStyle"
+                    curColor === color ? 'btnStyle active' : 'btnStyle'
                   }
                   name="color"
                   value={curColor}

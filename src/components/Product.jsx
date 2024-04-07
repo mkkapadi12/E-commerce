@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import CurrencyFormate from "../Helper/CurrencyFormate";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import CurrencyFormate from '../Helper/CurrencyFormate';
 
 const Product = (curElem) => {
   const { name, id, image, price, category } = curElem;

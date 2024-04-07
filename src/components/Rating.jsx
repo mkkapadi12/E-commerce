@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { FaStar } from "react-icons/fa";
-import { FaStarHalfAlt } from "react-icons/fa";
-import { AiOutlineStar } from "react-icons/ai";
+import React from 'react';
+import styled from 'styled-components';
+import { FaStar } from 'react-icons/fa';
+import { FaStarHalfAlt } from 'react-icons/fa';
+import { AiOutlineStar } from 'react-icons/ai';
 
 const Rating = ({ stars, reviews }) => {
   // console.log(stars);

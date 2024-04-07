@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import React from "react";
-import { useCartContext } from "../Context/CartContext";
-import CartItem from "../components/CartItem";
-import { NavLink } from "react-router-dom";
-import { Button } from "../styles/Button";
-import CurrencyFormate from "../Helper/CurrencyFormate";
+import styled from 'styled-components';
+import React from 'react';
+import { useCartContext } from '../Context/CartContext';
+import CartItem from '../components/CartItem';
+import { NavLink } from 'react-router-dom';
+import { Button } from '../styles/Button';
+import CurrencyFormate from '../Helper/CurrencyFormate';
 
 const Cart = () => {
   const { cart, clearCart, shipping_fee, total_price } = useCartContext();

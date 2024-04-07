@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { BsFillGridFill, BsList } from "react-icons/bs";
-import { useFilterContext } from "../Context/FilterContext";
+import React from 'react';
+import styled from 'styled-components';
+import { BsFillGridFill, BsList } from 'react-icons/bs';
+import { useFilterContext } from '../Context/FilterContext';
 
 const Sort = () => {
   const { Grid_View, setGridView, setListView, filter_product, sorting } =
@@ -12,13 +12,13 @@ const Sort = () => {
         {/* 1st column */}
         <div className="sorting-list--grid">
           <button
-            className={Grid_View ? "active sort-btn" : "sort-btn"}
+            className={Grid_View ? 'active sort-btn' : 'sort-btn'}
             onClick={setGridView}
           >
             <BsFillGridFill className="icon" />
           </button>
           <button
-            className={!Grid_View ? "active sort-btn" : "sort-btn"}
+            className={!Grid_View ? 'active sort-btn' : 'sort-btn'}
             onClick={setListView}
           >
             <BsList className="icon" />

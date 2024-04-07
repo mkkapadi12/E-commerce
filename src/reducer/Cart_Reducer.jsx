@@ -1,10 +1,10 @@
 const reducer = (state, action) => {
   switch (action.type) {
-    case "ADD_TO_CART":
+    case 'ADD_TO_CART':
       const { id, color, amount, product } = action.payload;
       //   console.log("product :", product);
       let existingProduct = state.cart.find(
-        (curEle) => curEle.id === id + color
+        (curEle) => curEle.id === id + color,
       );
 
       // console.log("existingProduct :", existingProduct);
@@ -51,7 +51,7 @@ const reducer = (state, action) => {
         };
       }
 
-    case "SET_INCREMENT":
+    case 'SET_INCREMENT':
       let updatedProduct = state.cart.map((curEle) => {
         if (curEle.id === action.payload) {
           let newIncrement = curEle.amount + 1;
@@ -73,7 +73,7 @@ const reducer = (state, action) => {
         cart: updatedProduct,
       };
 
-    case "SET_DECREMENT":
+    case 'SET_DECREMENT':
       let updatedProduct2 = state.cart.map((curEle) => {
         if (curEle.id === action.payload) {
           let newDecrement = curEle.amount - 1;
@@ -95,9 +95,9 @@ const reducer = (state, action) => {
         cart: updatedProduct2,
       };
 
-    case "REMOVE_ITEM":
+    case 'REMOVE_ITEM':
       let updatedItem = state.cart.filter(
-        (curItem) => curItem.id !== action.payload
+        (curItem) => curItem.id !== action.payload,
       );
       console.log(updatedItem);
 
@@ -106,7 +106,7 @@ const reducer = (state, action) => {
         cart: updatedItem,
       };
 
-    case "CLEAR_CART":
+    case 'CLEAR_CART':
       return {
         ...state,
         cart: [],
@@ -138,7 +138,7 @@ const reducer = (state, action) => {
 
     // This code is simplify by above code.
 
-    case "CART_TOAL_PRICE_ITEM":
+    case 'CART_TOAL_PRICE_ITEM':
       let { total_item, total_price } = state.cart.reduce(
         (accumulator, curEle) => {
           let { price, amount } = curEle;
@@ -151,7 +151,7 @@ const reducer = (state, action) => {
         {
           total_item: 0,
           total_price: 0,
-        }
+        },
       );
       return {
         ...state,

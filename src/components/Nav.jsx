@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import { IoCartOutline } from "react-icons/io5";
-import { CgMenu } from "react-icons/cg";
-import { CgClose } from "react-icons/cg";
-import { useCartContext } from "../Context/CartContext";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { IoCartOutline } from 'react-icons/io5';
+import { CgMenu } from 'react-icons/cg';
+import { CgClose } from 'react-icons/cg';
+import { useCartContext } from '../Context/CartContext';
 
 const Nav = () => {
   const [MenuIcon, setMenuIcon] = useState();
@@ -43,7 +43,7 @@ const Nav = () => {
       border: none;
     }
 
-    .mobile-nav-icon[name="close-outline"] {
+    .mobile-nav-icon[name='close-outline'] {
       display: none;
     }
 
@@ -163,7 +163,7 @@ const Nav = () => {
   `;
   return (
     <Nav>
-      <div className={MenuIcon ? "navbar active" : "navbar"}>
+      <div className={MenuIcon ? 'navbar active' : 'navbar'}>
         <ul className="navbar-lists">
           <li>
             <NavLink

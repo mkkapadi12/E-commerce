@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import CurrencyFormate from "../Helper/CurrencyFormate";
-import { NavLink } from "react-router-dom";
-import { Button } from "../styles/Button";
+import React from 'react';
+import styled from 'styled-components';
+import CurrencyFormate from '../Helper/CurrencyFormate';
+import { NavLink } from 'react-router-dom';
+import { Button } from '../styles/Button';
 
 const ListView = ({ products }) => {
   return (
@@ -53,7 +53,7 @@ const Wrapper = styled.section`
     overflow: hidden;
     transition: all 0.5s linear;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;

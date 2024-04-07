@@ -1,5 +1,5 @@
-import React from "react";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import React from 'react';
+import { FaMinus, FaPlus } from 'react-icons/fa';
 const AmoutCartToggle = ({ amount, setDecrese, setIncrese }) => {
   return (
     <div className="cart-button">

@@ -1,8 +1,8 @@
-import React from "react";
-import CurrencyFormate from "../Helper/CurrencyFormate";
-import AmoutCartToggle from "./AmoutCartToggle";
-import { FaTrash } from "react-icons/fa";
-import { useCartContext } from "../Context/CartContext";
+import React from 'react';
+import CurrencyFormate from '../Helper/CurrencyFormate';
+import AmoutCartToggle from './AmoutCartToggle';
+import { FaTrash } from 'react-icons/fa';
+import { useCartContext } from '../Context/CartContext';
 
 const CartItem = ({ id, color, price, amount, image, name, max }) => {
   const { removeItem, setDecrement, setIncrement } = useCartContext();

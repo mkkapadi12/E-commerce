@@ -1,18 +1,18 @@
-import styled from "styled-components";
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useProductContext } from "../Context/ProductContext";
-import PageNavigation from "../components/PageNavigation";
-import MyImage from "../components/MyImage";
-import { Container } from "../styles/Container";
-import CurrencyFormate from "../Helper/CurrencyFormate";
-import { TbTruckDelivery, TbReplace } from "react-icons/tb";
-import { MdSecurity } from "react-icons/md";
-import Rating from "../components/Rating";
-import AddToCart from "../components/AddToCart";
-import Progress from "../Helper/Progress";
+import styled from 'styled-components';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useProductContext } from '../Context/ProductContext';
+import PageNavigation from '../components/PageNavigation';
+import MyImage from '../components/MyImage';
+import { Container } from '../styles/Container';
+import CurrencyFormate from '../Helper/CurrencyFormate';
+import { TbTruckDelivery, TbReplace } from 'react-icons/tb';
+import { MdSecurity } from 'react-icons/md';
+import Rating from '../components/Rating';
+import AddToCart from '../components/AddToCart';
+import Progress from '../Helper/Progress';
 
-const API = "https://api.pujakaitem.com/api/products";
+const API = 'https://api.pujakaitem.com/api/products';
 
 const SingleProduct = () => {
   const { getSingleProduct, singleProduct, isSingleLoading } =
@@ -56,7 +56,7 @@ const SingleProduct = () => {
               <MyImage imgs={image} />
             </div>
             <div className="product-data">
-              <h2 style={{ textTransform: "capitalize" }}>{name}</h2>
+              <h2 style={{ textTransform: 'capitalize' }}>{name}</h2>
 
               <Rating stars={stars} reviews={reviews} />
               <p className="product-data-price">
@@ -90,7 +90,7 @@ const SingleProduct = () => {
               <div className="product-data-info">
                 <p>
                   Available :
-                  <span>{stock > 0 ? "In Stock" : "Not Available"} </span>
+                  <span>{stock > 0 ? 'In Stock' : 'Not Available'} </span>
                 </p>
                 <p>
                   ID :<span>{alis}</span>

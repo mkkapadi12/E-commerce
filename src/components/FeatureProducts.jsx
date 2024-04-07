@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { useProductContext } from "../Context/ProductContext";
-import Product from "./Product";
-import Progress from "../Helper/Progress";
+import React from 'react';
+import styled from 'styled-components';
+import { useProductContext } from '../Context/ProductContext';
+import Product from './Product';
+import Progress from '../Helper/Progress';
 
 const FeatureProducts = () => {
   const { featureProducts, isLoading } = useProductContext();
@@ -55,7 +55,7 @@ const Wrapper = styled.section`
     overflow: hidden;
     transition: all 0.5s linear;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;

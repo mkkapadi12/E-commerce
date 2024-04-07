@@ -1,11 +1,11 @@
-import React from "react";
-import { useState } from "react";
-import styled from "styled-components";
-import { FaCheck } from "react-icons/fa";
-import AmoutCartToggle from "./AmoutCartToggle";
-import { NavLink } from "react-router-dom";
-import { Button } from "../styles/Button";
-import { useCartContext } from "../Context/CartContext";
+import React from 'react';
+import { useState } from 'react';
+import styled from 'styled-components';
+import { FaCheck } from 'react-icons/fa';
+import AmoutCartToggle from './AmoutCartToggle';
+import { NavLink } from 'react-router-dom';
+import { Button } from '../styles/Button';
+import { useCartContext } from '../Context/CartContext';
 
 const AddToCart = ({ product }) => {
   const { addToCart } = useCartContext();
@@ -35,7 +35,7 @@ const AddToCart = ({ product }) => {
                   key={id}
                   style={{ backgroundColor: CurColor }}
                   className={
-                    color === CurColor ? "btnStyle active" : "btnStyle"
+                    color === CurColor ? 'btnStyle active' : 'btnStyle'
                   }
                   onClick={() => setColor(CurColor)}
                 >

@@ -1,6 +1,6 @@
 const FilterRedducer = (state, action) => {
   switch (action.type) {
-    case "LOAD_FILTER_PRODUCTS":
+    case 'LOAD_FILTER_PRODUCTS':
       let priceArr = action.payload.map((curElem) => curElem.price);
       // console.log("priceArr :", priceArr);
 
@@ -17,19 +17,19 @@ const FilterRedducer = (state, action) => {
         },
       };
 
-    case "GRID_VIEW":
+    case 'GRID_VIEW':
       return {
         ...state,
         Grid_View: true,
       };
 
-    case "LIST_VIEW":
+    case 'LIST_VIEW':
       return {
         ...state,
         Grid_View: false,
       };
 
-    case "SET_SORT_VALUE":
+    case 'SET_SORT_VALUE':
       // const userSortValue = document.getElementById("sort");
       // const SortValue =
       //   userSortValue.options[userSortValue.selectedIndex].value;
@@ -40,7 +40,7 @@ const FilterRedducer = (state, action) => {
         sortValue: action.payload,
       };
 
-    case "SORTING_DATA":
+    case 'SORTING_DATA':
       let newSortData;
       const { filter_product, sortValue } = state;
       let tempSortProduct = filter_product;
@@ -49,22 +49,22 @@ const FilterRedducer = (state, action) => {
 
       const sortingProducts = (a, b) => {
         //sorting by lowest price
-        if (sortValue === "lowest") {
+        if (sortValue === 'lowest') {
           return a.price - b.price;
         }
 
         //sorting by highest price
-        if (sortValue === "highest") {
+        if (sortValue === 'highest') {
           return b.price - a.price;
         }
 
         //Sorting a-z :
-        if (sortValue === "a-z") {
+        if (sortValue === 'a-z') {
           return a.name.localeCompare(b.name);
         }
 
         //Sorting z-a :
-        if (sortValue === "z-a") {
+        if (sortValue === 'z-a') {
           return b.name.localeCompare(a.name);
         }
       };
@@ -79,7 +79,7 @@ const FilterRedducer = (state, action) => {
 
     //set filter value
 
-    case "UPDATE_FILTER_VALUE":
+    case 'UPDATE_FILTER_VALUE':
       const { name, value } = action.payload;
       // console.log(value);
       return {
@@ -92,7 +92,7 @@ const FilterRedducer = (state, action) => {
 
     //set filter Product
 
-    case "FILTER_PRODUCTS":
+    case 'FILTER_PRODUCTS':
       let { all_product } = state;
       let tempFilterProduct = [...all_product];
 
@@ -105,19 +105,19 @@ const FilterRedducer = (state, action) => {
         });
       }
 
-      if (category !== "all") {
+      if (category !== 'all') {
         tempFilterProduct = tempFilterProduct.filter((curElem) => {
           return curElem.category === category;
         });
       }
 
-      if (company !== "all") {
+      if (company !== 'all') {
         tempFilterProduct = tempFilterProduct.filter((curElem) => {
           return curElem.company.toLowerCase() === company.toLowerCase();
         });
       }
 
-      if (color !== "all") {
+      if (color !== 'all') {
         tempFilterProduct = tempFilterProduct.filter((curElem) => {
           return curElem.colors.includes(color);
         });
@@ -134,15 +134,15 @@ const FilterRedducer = (state, action) => {
         filter_product: tempFilterProduct,
       };
 
-    case "CLEAR_FILTERS":
+    case 'CLEAR_FILTERS':
       return {
         ...state,
         filters: {
           ...state.filters,
-          text: "",
-          category: "all",
-          company: "all",
-          color: "all",
+          text: '',
+          category: 'all',
+          company: 'all',
+          color: 'all',
           maxPrice: state.filters.maxPrice,
           Price: state.filters.maxPrice,
           minPrice: state.filters.minPrice,

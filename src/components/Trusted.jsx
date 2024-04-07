@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Trusted = () => {
   return (
@@ -51,7 +51,7 @@ const Wrapper = styled.section`
   .brand-section {
     padding: 12rem 0 0 0;
   }
-  
+
   h3 {
     text-align: center;
     text-transform: capitalize;
