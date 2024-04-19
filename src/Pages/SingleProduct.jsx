@@ -17,13 +17,12 @@ const API = 'https://api.pujakaitem.com/api/products';
 const SingleProduct = () => {
   const { getSingleProduct, singleProduct, isSingleLoading } =
     useProductContext();
-  // console.log(singleProduct);
 
   const { id } = useParams();
 
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
-  }, []);
+  }, [id]);
 
   const {
     id: alis,
@@ -36,7 +35,6 @@ const SingleProduct = () => {
     stars,
     stock,
   } = singleProduct;
-  // console.log(colors);
 
   if (isSingleLoading) {
     return (

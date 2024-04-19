@@ -14,7 +14,7 @@ const FilterSection = () => {
   } = useFilterContext();
   // console.log(text);
 
-  //get the unique data gor each field.
+  //get the unique data for each field.
 
   const getUniqueData = (data, property) => {
     let newVal = data.map((curElem) => {
@@ -66,8 +66,7 @@ const FilterSection = () => {
                     name="category"
                     value={curElem}
                     onClick={updateFilterValue}
-                    className={curElem === category ? 'active' : 'null'}
-                  >
+                    className={curElem === category ? 'active' : 'null'}>
                     {curElem}
                   </button>
                 </>
@@ -82,8 +81,7 @@ const FilterSection = () => {
               name="company"
               id="company"
               className="filter-company--select"
-              onClick={updateFilterValue}
-            >
+              onClick={updateFilterValue}>
               {companyOnlyData.map((curEle, index) => {
                 return (
                   <>
@@ -109,8 +107,7 @@ const FilterSection = () => {
                     className="color-all--style"
                     name="color"
                     value={curColor}
-                    onClick={updateFilterValue}
-                  >
+                    onClick={updateFilterValue}>
                     All
                   </button>
                 );
@@ -125,8 +122,7 @@ const FilterSection = () => {
                   }
                   name="color"
                   value={curColor}
-                  onClick={updateFilterValue}
-                >
+                  onClick={updateFilterValue}>
                   {color === curColor ? (
                     <FaCheck className="checkStyle" />
                   ) : null}

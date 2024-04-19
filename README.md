@@ -28,13 +28,13 @@ Make sure you have the following software and accounts set up:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/mkkapadi12/mayurEcommerce.git
+   git clone https://github.com/mkkapadi12/E-commerce.git
    ```
 
 2. Change your working directory to the project folder:
 
    ```bash
-   cd news-app
+   cd E-commerce
    ```
 
 3. Create a `.env` file in the project root and add your News API key as follows:
@@ -111,7 +111,7 @@ Enjoy exploring and shopping with our React E-commerce website!
 
 ## Contributing
 
-Contributions and improvements are welcome! If you have any ideas, feature suggestions, or bug reports, please open an issue or create a pull request on the [Mayur E-commerce GitHub repository](https://github.com/mkkapadi12/mayurEcommerce).
+Contributions and improvements are welcome! If you have any ideas, feature suggestions, or bug reports, please open an issue or create a pull request on the [Mayur E-commerce GitHub repository](https://github.com/mkkapadi12/E-commerce).
 
 ## License
 
