@@ -39,23 +39,20 @@ const Contact = () => {
       <Wrapper>
         <h2 className="common-heading">Feel Free to Contact us</h2>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.61986299408!2d72.64559157517179!3d23.256916179010137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2c77c8ec3e55%3A0xccab1295bb101fa5!2sKH%207%20Dharm%20Cir%2C%20Kishan%20Nagar%2C%20Sector%2026%2C%20Gandhinagar%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1707561849478!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.6372737893053!2d70.79224057514442!3d22.367320979638436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959c972761ce515%3A0x3651e3fe1e9df4f8!2sMarwadi%20University!5e0!3m2!1sen!2sin!4v1716044022386!5m2!1sen!2sin"
           width="80%"
           height="450"
           style={{ border: '0px' }}
-          allowFullScreen=""
+          allowfullscreen=""
           loading="lazy"
-          title="home"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         <div className="container">
           <div className="contact-form">
             <form
               action="https://formspree.io/f/xyyrerep"
               method="post"
-              className="contact-inputs"
-            >
+              className="contact-inputs">
               <input
                 type="text"
                 name="username"
@@ -76,8 +73,7 @@ const Contact = () => {
                 rows="10"
                 placeholder="Enter Your Message"
                 required
-                autoComplete="off"
-              ></textarea>
+                autoComplete="off"></textarea>
               <input type="submit" value="Send" />
             </form>
           </div>

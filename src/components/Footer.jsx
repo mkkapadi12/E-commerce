@@ -24,7 +24,7 @@ const Footer = () => {
         <footer>
           <div className="container grid grid-four-column">
             <div className="footer-about">
-              <h3 className="h3">Mayur Kapadi</h3>
+              <h3 className="h3">Nensi Antala</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
             <div className="footer-subscribe">
@@ -50,14 +50,14 @@ const Footer = () => {
             </div>
             <div className="footer-contact">
               <h3>Call us</h3>
-              <a href="tel:9727434078">+91 9727434078</a>
+              <a href="tel:9727434078">+91 9316953315</a>
             </div>
           </div>
           <div className="footer-bottom--section">
             <hr />
             <div className="container grid grid-two-column">
               <p>
-                &copy; {new Date().getFullYear()} Mayur Kapadi. All rights
+                &copy; {new Date().getFullYear()} Nensi Antala. All rights
                 reserved
               </p>
               <div>
