@@ -5,7 +5,7 @@ import HeroSection from '../components/HeroSection';
 const About = () => {
   // const Bro = useProductContext();
   const data = {
-    name: 'Nensi E-commerce',
+    name: 'Mayur E-commerce',
   };
   return (
     <>

@@ -5,7 +5,7 @@ import Trusted from '../components/Trusted';
 import FeatureProducts from '../components/FeatureProducts';
 const Home = () => {
   const data = {
-    name: "Nensi Store",
+    name: "Mayur Store",
   };
   return (
     <>
