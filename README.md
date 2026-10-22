@@ -1,132 +1,123 @@
-# Mayur E-commerce
+# 🛍️ Mayur E-commerce
+
+A responsive **React e-commerce storefront**. Products load from a public REST API, and shoppers can browse, search, filter, sort, view product details and manage a shopping cart that is saved in the browser.
 
 ![E-commerce](./public/images/E-commerce.png)
 
-My E-commerce website is a responsive and dynamic platform designed to make online shopping easy and enjoyable. It fetches product information from APIs, ensuring that the inventory is up-to-date and reflective of the latest offerings.
+<!-- Live demo (add your deployed URL) -->
+<!-- 🔗 **Live Demo:** https://your-demo-link.vercel.app -->
 
-## Features
+## ✨ Features
 
-- [**User Authentication:**](#) Allow users to create accounts, log in, and securely manage their profiles.
-- [**Product Listings :**](#) Display a variety of products with details such as name, price, and description.
-- [**Shopping Cart :**](#) Enable users to add products to their cart and proceed to checkout.
-- [**Search and Filters :**](#) Facilitate easy product discovery with search functionality and filters.
-- [**Responsive Design :**](#) Ensure a seamless experience across devices.
+- **Product listing** with **grid and list views**
+- **Search** by product name
+- **Filters** by category, company, color and maximum price, plus a **Clear Filters** button
+- **Sorting**: price (lowest / highest) and name (A-Z / Z-A)
+- **Product details** page with image gallery, star rating, reviews count, brand, stock status and delivery / warranty info
+- **Color picker and quantity selector** (quantity limited to available stock)
+- **Shopping cart**: add, increase / decrease quantity, remove item, clear cart
+- **Order summary** with subtotal, shipping fee and order total, formatted in Indian Rupees (₹)
+- **Cart saved in `localStorage`**, so it survives page refresh
+- **Contact form** powered by [Formspree](https://formspree.io/)
+- Loading spinner (Material UI) and 404 error page
+- Fully responsive layout with `styled-components`
 
-## Getting Started
+## 🛠️ Tech Stack
 
-Follow these steps to set up and run the [E-commerce]() Website on your local machine.
+| Technology | Usage |
+| ---------- | ----- |
+| React 18 | UI library |
+| React Router DOM 6 | Routing |
+| Context API + `useReducer` | Global state for products, filters and cart |
+| Axios | API requests |
+| styled-components | Styling and theming |
+| Material UI | Loading spinner |
+| React Icons | Icons |
+| Formspree | Contact form backend |
+| Prettier | Code formatting |
 
-### Prerequisites
+## 🌐 API
 
-Make sure you have the following software and accounts set up:
+Product data comes from a free public API (no API key needed):
 
-- Node.js : Download and install Node.js from [nodejs.org](https://nodejs.org/).
-- API Key : You will need an API key from the API provider [API_KEY](https://api.pujakaitem.com/api/products).
+```
+GET https://api.pujakaitem.com/api/products
+```
 
-### Installation
+## 📁 Project Structure
 
-1. Clone the repository to your local machine:
+```
+E-commerce/
+├── public/
+│   └── images/              # Logos, hero and product images
+└── src/
+    ├── Pages/               # Home, About, Products, SingleProduct, Cart, Contact, ErrorPage
+    ├── components/          # Header, Nav, Footer, GridView, ListView, FilterSection, Sort, AddToCart, CartItem ...
+    ├── Context/             # ProductContext, FilterContext, CartContext
+    ├── reducer/             # productReducer, FilterReducer, Cart_Reducer
+    ├── Helper/              # CurrencyFormate, Progress (loader)
+    ├── styles/              # Reusable styled Button and Container
+    ├── GlobalStyle.jsx
+    ├── App.js               # Routes and theme
+    └── index.js             # Providers setup
+```
 
-   ```bash
-   git clone https://github.com/mkkapadi12/E-commerce.git
-   ```
+## 🧭 Routes
 
-2. Change your working directory to the project folder:
+| Path | Page |
+| ---- | ---- |
+| `/` | Home |
+| `/about` | About |
+| `/products` | All products with filters and sorting |
+| `/singleproduct/:id` | Product details |
+| `/cart` | Shopping cart |
+| `/contact` | Contact form |
+| `*` | 404 page |
 
-   ```bash
-   cd E-commerce
-   ```
+## 🚀 Getting Started
 
-3. Create a `.env` file in the project root and add your News API key as follows:
+**Prerequisites:** [Node.js](https://nodejs.org/) 16 or higher and npm. No `.env` file is required.
 
-   ```env
-   REACT_E-COMMERCE_PRODUCTS_API_KEY=your-api-key
-   ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/mkkapadi12/E-commerce.git
 
-4. Install the required dependencies:
+# 2. Go to the project folder
+cd E-commerce
 
-   ```bash
-   npm install
-   ```
+# 3. Install dependencies
+npm install
 
-### Running the App
+# 4. Start the development server
+npm start
+```
 
-1. Start the development server:
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-   ```bash
-   npm start
-   ```
+## 📜 Available Scripts
 
-2. Open your web browser and navigate to [http://localhost:3000](http://localhost:3000) to access the E-commerce Website.
+| Command | Description |
+| ------- | ----------- |
+| `npm start` | Run the app in development mode |
+| `npm run build` | Create an optimised production build |
+| `npm test` | Run tests in watch mode |
+| `npm run format` | Format code with Prettier |
 
-## Usage
+## 🔮 Future Improvements
 
-Once you have set up the project locally, you can interact with the React E-commerce website to explore products and simulate a shopping experience.
+- [ ] User authentication (login / signup)
+- [ ] Checkout and payment integration
+- [ ] Wishlist and order history
+- [ ] Pagination for product list
+- [ ] Own backend API (Node.js + MongoDB)
 
-### 1. Home Page
+## 👤 Author
 
-Visit the home page to get an overview of featured products and promotions. Navigate through different sections and get a feel for the overall design and layout.
+**Mayur Kapadi**
 
-### 2. Product Listings
+- GitHub: [@mkkapadi12](https://github.com/mkkapadi12)
+- Email: mayurkapadi12@gmail.com
 
-Explore the product listings by clicking on different categories or using the search functionality. Each product card provides essential information such as the product name, price, and a brief description.
+---
 
-### 3. Product Details
-
-Click on a product card to view detailed information about a specific product. Get an in-depth look at product features, specifications, and customer reviews.
-
-### 4. Shopping Cart
-
-Add products to your cart and proceed to the shopping cart page. Review the items you've added, update quantities, and continue shopping or proceed to checkout.
-
-### 5. User Authentication
-
-If you wish to access additional features such as saving favorites or viewing order history, consider creating an account or logging in.
-
-### 6. Responsive Design
-
-Test the responsiveness of the website by accessing it from different devices - desktops, tablets, and mobile phones. Ensure that the user interface adapts gracefully to various screen sizes.
-
-### 7. Testing
-
-Feel free to test any additional features, report any issues you encounter, and contribute to the improvement of the project.
-
-### 8. Provide Feedback
-
-We value your feedback! If you have suggestions, find bugs, or want to contribute, please let us know by opening an issue or submitting a pull request.
-
-Enjoy exploring and shopping with our React E-commerce website!
-
-## Folder Structure
-
-- `src/` contains the main source code of the application.
-- `src/components/` holds React components used in the app.
-- `src/Context/` holds React creatContext functionality.
-- `src/Helper/` holds React small components as a helper used in the app.
-- `src/Pages/` holds Pages like Home,About which show the users.
-- `src/reducer/` holds React Hook "useReducer" functionality
-- `src/styles/` holds Button and Container styled Components.
-- `src/App.js` is the root component where the application starts.
-- `src/GlobalStyle.jsx` contains the CSS styles for the app using style component.
-
-## Contributing
-
-Contributions and improvements are welcome! If you have any ideas, feature suggestions, or bug reports, please open an issue or create a pull request on the [Mayur E-commerce GitHub repository](https://github.com/mkkapadi12/E-commerce).
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
-
-- Built with [React.js](https://reactjs.org).
-- Products data provided by [PRODUCT API](https://api.pujakaitem.com/api/products).
-
-## Contact
-
-If you have any questions or need assistance, please feel free to contact us at
-
-- Email: [mayurkapadi12@gmail.com]
-- GitHub: [https://github.com/mkkapadi12]
-
-Enjoy your Online Shopping with the [Mayur E-commerce](#) !
+⭐ If you like this project, consider giving it a star!
